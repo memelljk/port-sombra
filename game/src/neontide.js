@@ -424,7 +424,7 @@ PS.loop = function (now) {
     else PS.markers.objective.visible = false;
     const pulse = 1 + Math.sin(PS.time * 3.4) * 0.1;
     PS.markers.objective.scale.set(pulse, 1, pulse);
-    if (Math.floor(PS.time * 2) !== Math.floor((PS.time - dt) * 2)) PS.HUD.update();
+    PS.HUD.update(); // every frame: the minimap must never sit blank in a capture
   }
   PS.updateCamera(dt);
   PS.renderer.render(PS.scene, PS.camera);

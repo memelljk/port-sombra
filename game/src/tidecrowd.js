@@ -15,7 +15,7 @@ PS.spawnPeds = function (scene, seed) {
     const ped = {
       group: group, x: onV ? road + side : along, z: onV ? along : road + side,
       angle: rnd() * 6.28, speed: 0, walkPhase: rnd() * 6, state: 'stroll', timer: 2 + rnd() * 5,
-      axis: onV ? 'z' : 'x', dir: rnd() > 0.5 ? 1 : -1, road: road, side: side, robbed: false, robTimer: 0
+      axis: onV ? 'z' : 'x', dir: rnd() > 0.5 ? 1 : -1, road: road, side: side, robbed: false, robTimer: 0, health: 100
     };
     if (ped.x > 168) ped.x = 150;
     group.position.set(ped.x, 0, ped.z);
@@ -35,8 +35,9 @@ PS.updatePeds = function (dt) {
       p.state = 'held'; p.robTimer += dt;
       if (p.robTimer > 1.2) {
         p.robbed = true; p.state = 'flee'; p.timer = 3;
-        PS.addCash(10 + Math.floor(Math.random() * 20)); PS.commitCrime(1, p.x, p.z);
-        PS.banner('ROBBED +$'); setTimeout(function () {}, 0);
+        const loot = 10 + Math.floor(Math.random() * 20);
+        PS.addCash(loot); PS.commitCrime(1, p.x, p.z);
+        PS.banner('ROBBED +$' + loot);
       }
     } else if (p.state === 'held') { p.state = 'stroll'; p.robTimer = 0; }
     let moving = false, spd = 0;

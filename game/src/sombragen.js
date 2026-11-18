@@ -30,7 +30,7 @@ PS.generateCity = function (scene, seed) {
   const groundTex = PS.groundTexture('#232a33', '#9fb6c9'); groundTex.repeat.set(40, 40);
   const ground = new THREE.Mesh(new THREE.PlaneGeometry(560, 560), new THREE.MeshLambertMaterial({ map: groundTex, color: 0x8fa3b5 }));
   ground.rotation.x = -Math.PI / 2; ground.position.set(30, -0.05, 0); scene.add(ground);
-  const waterMat = new THREE.MeshLambertMaterial({ color: 0x0d3247, emissive: 0x06222f });
+  const waterMat = new THREE.MeshLambertMaterial({ color: 0x0a2436, emissive: 0x03141d });
   const water = new THREE.Mesh(new THREE.PlaneGeometry(320, 560), waterMat);
   water.rotation.x = -Math.PI / 2; water.position.set(PS.WATER_X + 160, -0.35, 0); scene.add(water);
   PS.waterMesh = water;
@@ -122,6 +122,7 @@ PS.generateCity = function (scene, seed) {
   const lampBall = new THREE.Mesh(new THREE.SphereGeometry(1.15, 10, 8), new THREE.MeshBasicMaterial({ color: 0xffe9a8, fog: false }));
   lampBall.position.set(238, 20.6, -152); scene.add(lampBall); PS.lighthouseLamp = lampBall;
   scene.add(PS.bakedMesh(dressItems));
+  scene.add(PS.bakedMesh(bodyItems)); // the 252 building shells themselves
   const glowMesh = PS.bakedMesh(glowItems, { basic: true });
   scene.add(glowMesh); PS.signGlowMesh = glowMesh;
 

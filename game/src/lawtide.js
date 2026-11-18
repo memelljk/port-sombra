@@ -82,6 +82,7 @@ PS.updatePolice = function (dt) {
   PS.officers.forEach(function (o, i) {
     if (i < wantOfficers && !o.active && !hero.inCar) {
       o.active = true; o.group.visible = true; o.health = 60;
+      o.group.rotation.x = 0; o.group.position.y = 0;
       o.x = hero.x + (i === 0 ? 14 : -14); o.z = hero.z + 10;
     }
     if (w.stars < 4 || hero.inCar) { o.active = false; o.group.visible = false; }

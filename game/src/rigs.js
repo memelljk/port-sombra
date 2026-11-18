@@ -30,8 +30,8 @@ PS.makeCar = function (kind, x, z, angle, color) {
   lamps.push(PS.boxItem(0.42, 0.14, 0.1, 0xff3b30, -k.w / 2 + 0.3, 0.74, -k.l / 2));
   lamps.push(PS.boxItem(0.42, 0.14, 0.1, 0xff3b30, k.w / 2 - 0.3, 0.74, -k.l / 2));
   const coneGeo = new THREE.ConeGeometry(1.05, 7.5, 8, 1, true);
-  lamps.push(PS.bakeItem(coneGeo, 0x554a22, -k.w / 2 + 0.3, 0.62, k.l / 2 + 3.6, 0, Math.PI / 2 + 0.12, 0));
-  lamps.push(PS.bakeItem(coneGeo.clone(), 0x554a22, k.w / 2 - 0.3, 0.62, k.l / 2 + 3.6, 0, Math.PI / 2 + 0.12, 0));
+  lamps.push(PS.bakeItem(coneGeo, 0x161006, -k.w / 2 + 0.3, 0.62, k.l / 2 + 3.6, 0, Math.PI / 2 + 0.12, 0));
+  lamps.push(PS.bakeItem(coneGeo.clone(), 0x161006, k.w / 2 - 0.3, 0.62, k.l / 2 + 3.6, 0, Math.PI / 2 + 0.12, 0));
   if (kind === 'interceptor') {
     lamps.push(PS.boxItem(1.2, 0.18, 0.5, 0xff3b30, -0.3, 1.32, -0.2));
     lamps.push(PS.boxItem(1.2, 0.18, 0.5, 0x2e6fc2, 0.3, 1.32, -0.2));
