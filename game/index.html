@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Port Sombra: Neon Tide</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./sombranight.css">
+</head>
+<body>
+<canvas id="view" aria-label="Port Sombra: Neon Tide — third-person open-world crime game"></canvas>
+
+<div id="hud" class="hidden">
+  <div id="topbar">
+    <div id="clockbox"><span id="clock">21:00</span> <span id="weather"></span></div>
+    <div id="stars"></div>
+    <div id="cashbox">$<span id="cash">0</span> · <span id="rank">RUNNER</span></div>
+  </div>
+  <div id="objective"><div id="objtitle"></div><div id="objtext"></div></div>
+  <div id="bars">
+    <div class="bar"><label>HP</label><div class="track"><div id="hp" class="fill hp"></div></div></div>
+    <div class="bar" id="bustedwrap"><label>BUSTED</label><div class="track"><div id="busted" class="fill busted"></div></div></div>
+    <div id="speedbox"><span id="speed">0</span> km/h · <span id="ammo"></span></div>
+    <div id="radiobox"></div>
+  </div>
+  <canvas id="minimap" width="180" height="180"></canvas>
+  <div id="prompt"></div>
+  <div id="dialogue" class="hidden"><div id="dlgname"></div><div id="dlgtext"></div><div id="dlghint">E — continue</div></div>
+  <div id="banner" class="hidden"></div>
+</div>
+
+<div id="shopmenu" class="hidden panel">
+  <h2 id="shopname"></h2><div id="shopitems"></div>
+  <p class="hint">Click an item to buy · E or Esc to leave</p>
+</div>
+
+<div id="bigmap" class="hidden panel"><h2>PORT SOMBRA</h2><canvas id="mapcanvas" width="640" height="640"></canvas><p class="hint">P or Esc to close</p></div>
+
+<div id="title">
+  <h1>PORT SOMBRA</h1><h3>NEON TIDE</h3>
+  <p class="tag">A storm-lashed smuggler port. Sixteen jobs. One tide going out.</p>
+  <button id="newgame">NEW GAME</button>
+  <button id="continue" class="hidden">CONTINUE</button>
+  <p class="controls">WASD move / drive · Mouse orbit · E interact / enter car / board boat · F melee · Click shoot ·
+  Space handbrake · R radio (in car) / reload (on foot) · P city map · M mute · Esc pause</p>
+</div>
+
+<div id="pause" class="hidden panel"><h2>PAUSED</h2><p>Esc to resume</p><p id="pausestats"></p></div>
+<div id="dead" class="hidden panel"><h2 id="deadtitle">WASTED</h2><p id="deadtext"></p><button id="respawn">WAKE UP AT ST. SOMBRA CLINIC</button></div>
+
+<script src="./vendor/three.min.js"></script>
+<script src="./src/bakekit.js"></script>
+<script src="./src/sombragen.js"></script>
+<script src="./src/rigs.js"></script>
+<script src="./src/marco.js"></script>
+<script src="./src/tidecrowd.js"></script>
+<script src="./src/lawtide.js"></script>
+<script src="./src/gunplay.js"></script>
+<script src="./src/wavefm.js"></script>
+<script src="./src/hudveil.js"></script>
+<script src="./src/saga.js"></script>
+<script src="./src/shotpose.js"></script>
+<script src="./src/neontide.js"></script>
+</body>
+</html>

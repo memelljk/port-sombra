@@ -1,0 +1,42 @@
+/* Port Sombra: Neon Tide — night-port HUD styling, wet neon on dark glass. */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #060a12; font-family: "Segoe UI", system-ui, sans-serif; color: #dff3ff; }
+#view { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+.hidden { display: none !important; }
+#hud { position: fixed; inset: 0; pointer-events: none; }
+#topbar { position: absolute; top: 10px; left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: flex-start; }
+#clockbox, #cashbox { background: rgba(4,12,22,.72); border: 1px solid rgba(64,224,255,.35); padding: 6px 12px; border-radius: 6px; font-weight: 600; letter-spacing: .04em; }
+#stars { font-size: 26px; color: #ffd23e; text-shadow: 0 0 8px rgba(255,210,62,.8); letter-spacing: 4px; }
+#stars .off { color: rgba(255,255,255,.18); text-shadow: none; }
+#objective { position: absolute; top: 64px; left: 12px; max-width: 360px; background: rgba(4,12,22,.72); border-left: 4px solid #ff4fa3; padding: 8px 12px; border-radius: 4px; }
+#objtitle { color: #ff9ecb; font-weight: 700; letter-spacing: .08em; font-size: 13px; }
+#objtext { font-size: 14px; margin-top: 2px; }
+#bars { position: absolute; right: 12px; bottom: 12px; width: 240px; background: rgba(4,12,22,.72); border: 1px solid rgba(64,224,255,.25); border-radius: 6px; padding: 8px 10px; }
+.bar { display: flex; align-items: center; gap: 8px; margin: 3px 0; }
+.bar label { width: 52px; font-size: 11px; letter-spacing: .08em; color: #9fd8ef; }
+.track { flex: 1; height: 10px; background: rgba(255,255,255,.12); border-radius: 5px; overflow: hidden; }
+.fill { height: 100%; width: 100%; transition: width .15s; }
+.fill.hp { background: linear-gradient(90deg, #2ee66b, #a6ff5e); }
+.fill.busted { background: linear-gradient(90deg, #ffb03e, #ff4f4f); width: 0%; }
+#speedbox { font-size: 13px; margin-top: 4px; color: #cfeeff; }
+#radiobox { font-size: 12px; color: #7df0ff; margin-top: 2px; min-height: 15px; }
+#minimap { position: absolute; left: 12px; bottom: 12px; border-radius: 50%; border: 2px solid rgba(64,224,255,.5); background: rgba(3,10,18,.8); }
+#prompt { position: absolute; left: 50%; bottom: 120px; transform: translateX(-50%); background: rgba(4,12,22,.85); border: 1px solid #40e0ff; padding: 8px 16px; border-radius: 20px; font-size: 15px; }
+#prompt:empty { display: none; }
+#dialogue { position: absolute; left: 50%; bottom: 34px; transform: translateX(-50%); width: min(680px, 88vw); background: rgba(3,9,18,.92); border: 1px solid rgba(255,79,163,.5); border-radius: 8px; padding: 12px 16px; pointer-events: none; }
+#dlgname { color: #ff9ecb; font-weight: 700; letter-spacing: .06em; }
+#dlgtext { margin-top: 4px; font-size: 16px; line-height: 1.35; }
+#dlghint { margin-top: 6px; font-size: 11px; color: #8fb8cc; }
+#banner { position: absolute; top: 22%; left: 50%; transform: translateX(-50%); font-size: 34px; font-weight: 800; letter-spacing: .12em; color: #fff; text-shadow: 0 0 18px #ff4fa3, 0 2px 6px #000; }
+.panel { position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%); background: rgba(3,10,20,.95); border: 1px solid rgba(64,224,255,.45); border-radius: 10px; padding: 22px 28px; text-align: center; z-index: 5; }
+.panel h2 { margin: 0 0 10px; letter-spacing: .1em; color: #7df0ff; }
+.hint { color: #8fb8cc; font-size: 12px; }
+.shopitem { display: block; width: 100%; margin: 6px 0; padding: 10px 14px; background: rgba(64,224,255,.08); color: #dff3ff; border: 1px solid rgba(64,224,255,.35); border-radius: 6px; font-size: 15px; cursor: pointer; text-align: left; }
+.shopitem:hover { background: rgba(64,224,255,.22); }
+#title { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(ellipse at 50% 70%, rgba(10,40,66,.88), rgba(2,5,10,.96)); z-index: 6; text-align: center; }
+#title h1 { font-size: 64px; margin: 0; letter-spacing: .14em; color: #fff; text-shadow: 0 0 26px #40e0ff, 0 0 60px #ff4fa3; }
+#title h3 { margin: 2px 0 10px; letter-spacing: .5em; color: #ff9ecb; font-weight: 600; }
+#title .tag { color: #bfe9ff; }
+#title button, #dead button { margin: 8px; padding: 12px 34px; font-size: 17px; font-weight: 700; letter-spacing: .08em; background: rgba(64,224,255,.12); color: #fff; border: 1px solid #40e0ff; border-radius: 6px; cursor: pointer; }
+#title button:hover, #dead button:hover { background: rgba(64,224,255,.3); }
+#title .controls { max-width: 640px; color: #8fb8cc; font-size: 13px; line-height: 1.5; padding: 0 16px; }
